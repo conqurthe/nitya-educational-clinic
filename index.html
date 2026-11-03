@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nitya Educational Clinic & Lab | नित्या एजुकेशनल क्लिनिक</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Poppins:wght@300;500;700&family=Yatra+One&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
+    <!-- Premium Nature Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Philosopher:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600;700;800&family=Yatra+One&display=swap" rel="stylesheet">
+    <!-- FontAwesome 6 Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,22 +15,35 @@
     <!-- Nature Falling Leaves Canvas -->
     <canvas id="leavesCanvas"></canvas>
 
-    <!-- Top Glow Header Navigation -->
+    <!-- Slide-out Menu Drawer -->
+    <div id="menuDrawer" class="menu-drawer">
+        <div class="drawer-header">
+            <h3 style="color:#fcd34d; font-family:'Philosopher', sans-serif;">🌿 Navigation Hub</h3>
+            <button id="closeMenuBtn" class="drawer-close">&times;</button>
+        </div>
+        <div class="drawer-links">
+            <a href="#home"><i class="fa-solid fa-house"></i> Home (मुख्य पृष्ठ)</a>
+            <a href="science-lab.html"><i class="fa-solid fa-flask-vial"></i> Virtual Science Lab</a>
+            <a href="maths-eco-lab.html"><i class="fa-solid fa-chart-line"></i> Maths & Eco Lab</a>
+            <a href="academics.html"><i class="fa-solid fa-book-open"></i> Classes 6 to 12 Hub</a>
+            <a href="gk-hub.html"><i class="fa-solid fa-landmark"></i> Civil Services & GK</a>
+            <a href="english-hub.html"><i class="fa-solid fa-comments"></i> English Mastery & Words</a>
+            <a href="tech-hub.html"><i class="fa-solid fa-brain"></i> AI, IT & Trading Skills</a>
+            <a href="#doubt-portal"><i class="fa-solid fa-paper-plane"></i> Ask Doubts Directly</a>
+        </div>
+    </div>
+
+    <!-- Glass Header Navigation with Menu Button -->
     <header class="glass-header">
-        <div class="logo-area">
-            <span class="leaf-icon">🍃</span>
+        <div class="header-left">
+            <button id="menuToggleBtn" class="menu-btn" title="Open Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
             <div class="brand-text">
-                <h1 class="brand-title">Nitya Educational Clinic & Lab</h1>
-                <p class="brand-sub">नित्या एजुकेशनल क्लिनिक & रिसर्च लैब</p>
+                <h1>Nitya Educational Clinic & Lab</h1>
+                <p>नित्या एजुकेशनल क्लिनिक & रिसर्च लैब</p>
             </div>
         </div>
-
-        <nav class="nav-links">
-            <a href="#home" class="active-link"><i class="fa-solid fa-house"></i> Home</a>
-            <a href="#smart-tv"><i class="fa-solid fa-tv"></i> Current Affairs TV</a>
-            <a href="#zones"><i class="fa-solid fa-compass"></i> Learning Zones</a>
-            <a href="#doubt-portal"><i class="fa-solid fa-circle-question"></i> Ask Doubts</a>
-        </nav>
 
         <!-- Day / Night Magic Toggle Button -->
         <button id="themeToggle" class="magic-toggle" title="Switch Day / Night">
@@ -69,11 +82,6 @@
                         </div>
                     </div>
                     <div class="tv-scanlines"></div>
-                </div>
-                <div class="tv-controls">
-                    <span class="dial"></span>
-                    <span class="dial"></span>
-                    <span class="speaker-grill"></span>
                 </div>
             </div>
         </section>
@@ -160,19 +168,16 @@
     <div class="floating-nature-dock">
         <a href="tel:+91XXXXXXXXXX" class="dock-btn call-btn" title="Call Us">
             <i class="fa-solid fa-phone"></i>
-            <span class="dock-tip">Call</span>
         </a>
         <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="dock-btn wa-btn" title="WhatsApp Chat">
             <i class="fa-brands fa-whatsapp"></i>
-            <span class="dock-tip">WhatsApp</span>
         </a>
         <button id="feedbackBtn" class="dock-btn fb-btn" title="Give Feedback">
             <i class="fa-solid fa-heart"></i>
-            <span class="dock-tip">Feedback</span>
         </button>
     </div>
 
-    <!-- Engagement Floating Bar (Share, Like, Comment) -->
+    <!-- Engagement Floating Bar (Share, Like) -->
     <div class="floating-engagement">
         <button id="likeBtn" class="engage-btn"><i class="fa-regular fa-thumbs-up"></i> <span id="likeCount">142</span></button>
         <button id="shareBtn" class="engage-btn"><i class="fa-solid fa-share-nodes"></i> Share</button>
