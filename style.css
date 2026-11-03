@@ -1,14 +1,14 @@
 /* ==========================================================
-   NITYA EDUCATIONAL CLINIC & LAB - ULTRA MAGICAL NATURE
-   Deep Bioluminescent Forest & Golden Sunlight Atmosphere
+   NITYA EDUCATIONAL CLINIC & LAB - MASTER STYLE SHEET
+   Complete Magical Nature Theme, Glowing Fonts & 1-Line Header
    ========================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Philosopher:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Philosopher:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600;700;800&family=Yatra+One&display=swap');
 
 :root {
-    --forest-bg: radial-gradient(circle at 50% 15%, rgba(6, 44, 30, 0.85) 0%, rgba(2, 16, 11, 0.96) 65%, #010805 100%),
+    --forest-bg: radial-gradient(circle at 50% 15%, rgba(6, 44, 30, 0.88) 0%, rgba(2, 16, 11, 0.96) 65%, #010805 100%),
                  url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1600&auto=format&fit=crop');
-    --glass-card: rgba(4, 25, 17, 0.72);
+    --glass-card: rgba(4, 25, 17, 0.75);
     --neon-border: rgba(52, 211, 153, 0.55);
     --neon-glow: 0 0 25px rgba(16, 185, 129, 0.6), inset 0 0 15px rgba(52, 211, 153, 0.3);
     --title-gradient: linear-gradient(135deg, #a7f3d0 0%, #34d399 40%, #fef08a 70%, #f59e0b 100%);
@@ -79,117 +79,140 @@ body::before {
     z-index: 3;
 }
 
-/* Header Navbar */
+/* 1-Line Shining Header */
 .glass-header {
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 14px 18px;
-    background: rgba(3, 20, 14, 0.82);
-    backdrop-filter: blur(18px);
-    border-bottom: 2px solid var(--neon-border);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+    padding: 10px 14px;
+    background: rgba(2, 16, 11, 0.88);
+    backdrop-filter: blur(20px);
+    border-bottom: 2px solid rgba(52, 211, 153, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(16, 185, 129, 0.25);
+    width: 100%;
 }
 
 body.day-mode .glass-header {
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(255, 255, 255, 0.92);
+    border-bottom: 2px solid rgba(16, 185, 129, 0.5);
+    box-shadow: 0 4px 25px rgba(5, 150, 105, 0.2);
 }
 
 .header-left {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
 }
 
-/* Menu Toggle Button */
+/* Adorable Animated Menu Button */
 .menu-btn {
-    width: 44px;
-    height: 44px;
-    background: rgba(16, 185, 129, 0.18);
-    border: 1.5px solid var(--neon-border);
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.25), rgba(4, 25, 17, 0.6));
+    border: 1.5px solid #34d399;
     border-radius: 12px;
     color: #6ee7b7;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: var(--neon-glow);
-    transition: transform 0.2s ease, background 0.3s ease;
+    box-shadow: 0 0 15px rgba(52, 211, 153, 0.4);
+    transition: all 0.3s ease;
 }
 
 body.day-mode .menu-btn {
     color: #064e3b;
-    background: rgba(16, 185, 129, 0.2);
+    border-color: #059669;
+    background: rgba(16, 185, 129, 0.15);
 }
 
 .menu-btn:active {
-    transform: scale(0.92);
+    transform: scale(0.9);
+}
+
+/* Brand Text - STRICTLY 1 SINGLE LINE WITH INTENSE GLOW */
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
 }
 
 .brand-text h1 {
     font-family: 'Philosopher', sans-serif;
-    font-size: 1.15rem;
-    font-weight: 700;
-    background: var(--title-gradient);
+    font-size: clamp(0.78rem, 3.4vw, 1.25rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    background: linear-gradient(135deg, #a7f3d0 0%, #34d399 35%, #fef08a 70%, #f59e0b 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: var(--text-glow);
+    text-shadow: 0 0 12px rgba(52, 211, 153, 0.7), 0 0 24px rgba(16, 185, 129, 0.4);
+    animation: titleGlowBreath 3s infinite alternate;
+}
+
+body.day-mode .brand-text h1 {
+    background: linear-gradient(135deg, #064e3b 0%, #059669 40%, #d97706 80%, #78350f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+}
+
+@keyframes titleGlowBreath {
+    0% { filter: drop-shadow(0 0 4px rgba(52, 211, 153, 0.5)); }
+    100% { filter: drop-shadow(0 0 16px rgba(250, 204, 21, 0.8)); }
 }
 
 .brand-text p {
-    font-size: 0.72rem;
+    font-size: 0.65rem;
     color: #6ee7b7;
     font-weight: 600;
+    white-space: nowrap;
 }
 
 body.day-mode .brand-text p {
     color: #047857;
 }
 
-/* Spellbound Day/Night Toggle Pill */
+/* Spellbound Compact Toggle */
 .magic-toggle {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 7px 14px;
-    background: linear-gradient(135deg, rgba(6, 78, 59, 0.8), rgba(2, 44, 34, 0.9));
-    border: 2px solid #34d399;
-    border-radius: 40px;
+    gap: 6px;
+    padding: 6px 10px;
+    min-width: fit-content;
+    background: linear-gradient(135deg, rgba(6, 78, 59, 0.85), rgba(2, 44, 34, 0.95));
+    border: 1.5px solid #34d399;
+    border-radius: 30px;
     color: #fef08a;
     cursor: pointer;
-    box-shadow: 0 0 20px rgba(52, 211, 153, 0.6);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 0 16px rgba(52, 211, 153, 0.5);
+    transition: all 0.3s ease;
 }
 
 body.day-mode .magic-toggle {
     background: linear-gradient(135deg, #fef08a, #f59e0b);
     border-color: #d97706;
     color: #78350f;
-    box-shadow: 0 0 25px rgba(245, 158, 11, 0.7);
-}
-
-.magic-toggle:active {
-    transform: scale(0.92);
+    box-shadow: 0 0 18px rgba(245, 158, 11, 0.6);
 }
 
 .toggle-icon {
-    font-size: 1.1rem;
-    animation: rotateGlyph 6s infinite linear;
-}
-
-@keyframes rotateGlyph {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    font-size: 0.95rem;
 }
 
 .toggle-text {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    letter-spacing: 0.5px;
 }
 
 /* Slide-out Menu Drawer */
