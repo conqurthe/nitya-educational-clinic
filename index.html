@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nitya Educational Clinic & Lab | नित्या एजुकेशनल क्लिनिक</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Poppins:wght@300;500;700&family=Yatra+One&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="night-mode">
+
+    <!-- Nature Falling Leaves Canvas -->
+    <canvas id="leavesCanvas"></canvas>
+
+    <!-- Top Glow Header Navigation -->
+    <header class="glass-header">
+        <div class="logo-area">
+            <span class="leaf-icon">🍃</span>
+            <div class="brand-text">
+                <h1 class="brand-title">Nitya Educational Clinic & Lab</h1>
+                <p class="brand-sub">नित्या एजुकेशनल क्लिनिक & रिसर्च लैब</p>
+            </div>
+        </div>
+
+        <nav class="nav-links">
+            <a href="#home" class="active-link"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="#smart-tv"><i class="fa-solid fa-tv"></i> Current Affairs TV</a>
+            <a href="#zones"><i class="fa-solid fa-compass"></i> Learning Zones</a>
+            <a href="#doubt-portal"><i class="fa-solid fa-circle-question"></i> Ask Doubts</a>
+        </nav>
+
+        <!-- Day / Night Magic Toggle Button -->
+        <button id="themeToggle" class="magic-toggle" title="Switch Day / Night">
+            <span class="toggle-icon">🌙</span>
+            <span class="toggle-text">Night Forest</span>
+        </button>
+    </header>
+
+    <!-- Hero Section with Glowing Nature Atmosphere -->
+    <main id="home" class="hero-section">
+        <div class="hero-badge">✨ Nature Inspired Educational Platform | प्रकृति समर्पित शिक्षा</div>
+        <h2 class="shining-headline">ज्ञान वही जो भटकने से रोके और राह दिखाए</h2>
+        <p class="hero-desc">
+            Class 6th to 12th (NCERT / CBSE / UP Board 2026), Science & Maths Labs, English Pro Mastery & Civil Services GK.
+        </p>
+
+        <!-- Smart TV Container (Current Affairs & Free PDF Download) -->
+        <section id="smart-tv" class="smart-tv-wrapper">
+            <div class="tv-casing">
+                <div class="tv-antenna">
+                    <span class="antenna-left"></span>
+                    <span class="antenna-right"></span>
+                </div>
+                <div class="tv-screen">
+                    <div class="tv-header">
+                        <span class="live-dot"></span> LIVE EDUCATIONAL SMART TV | समसामयिकी
+                    </div>
+                    <div class="tv-content">
+                        <h3 id="currentAffairsTitle" class="tv-title">📰 आज के मुख्य राष्ट्रीय एवं अंतर्राष्ट्रीय समसामयिक घटनाक्रम</h3>
+                        <p class="tv-summary">
+                            Civil Services, UPPSC, State Exams एवं बोर्ड परीक्षाओं के लिए विशेष दैनिक विश्लेषण एवं व्याख्यात्मक नोट्स।
+                        </p>
+                        <div class="tv-actions">
+                            <a href="#" class="tv-download-btn"><i class="fa-solid fa-file-pdf"></i> Download Daily PDF (हिंदी)</a>
+                            <a href="#" class="tv-download-btn"><i class="fa-solid fa-file-pdf"></i> Download Daily PDF (English)</a>
+                        </div>
+                    </div>
+                    <div class="tv-scanlines"></div>
+                </div>
+                <div class="tv-controls">
+                    <span class="dial"></span>
+                    <span class="dial"></span>
+                    <span class="speaker-grill"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7 Core Learning Zones (Interactive Adorable Cards) -->
+        <section id="zones" class="zones-container">
+            <h2 class="section-glow-title">🌿 7 Wonder Learning Portals | 7 प्रमुख शैक्षणिक क्षेत्र</h2>
+
+            <div class="cards-grid">
+                <!-- Zone 1 -->
+                <div class="glow-card">
+                    <div class="card-icon">🔬</div>
+                    <h3>Virtual Science Lab</h3>
+                    <p>Physics, Chemistry, and Biology interactive 3D simulations (Classes 6-12).</p>
+                    <a href="science-lab.html" class="portal-btn">Enter Science Lab &rarr;</a>
+                </div>
+
+                <!-- Zone 2 -->
+                <div class="glow-card">
+                    <div class="card-icon">📐</div>
+                    <h3>Maths & Economics Lab</h3>
+                    <p>Dynamic flowcharts, live Demand-Supply curves, tables, and geometric visualizers.</p>
+                    <a href="maths-eco-lab.html" class="portal-btn">Explore Lab &rarr;</a>
+                </div>
+
+                <!-- Zone 3 -->
+                <div class="glow-card">
+                    <div class="card-icon">📚</div>
+                    <h3>Academic Directory (6-12)</h3>
+                    <p>NCERT 2026 Curriculum, pre-chapter vocabulary cards, Mini-TV & PDF notes.</p>
+                    <a href="academics.html" class="portal-btn">Open Classes &rarr;</a>
+                </div>
+
+                <!-- Zone 4 -->
+                <div class="glow-card">
+                    <div class="card-icon">🏆</div>
+                    <h3>Civil Services & Govt GK</h3>
+                    <p>Chronological history, Indian polity, geography timelines & competitive digests.</p>
+                    <a href="gk-hub.html" class="portal-btn">Start GK Hub &rarr;</a>
+                </div>
+
+                <!-- Zone 5 -->
+                <div class="glow-card">
+                    <div class="card-icon">🗣️</div>
+                    <h3>English Mastery Academy</h3>
+                    <p>Zero to Hero grammar, spoken fluency & Daily 25 idiom/words vault (Catch-22).</p>
+                    <a href="english-hub.html" class="portal-btn">Learn English &rarr;</a>
+                </div>
+
+                <!-- Zone 6 -->
+                <div class="glow-card">
+                    <div class="card-icon">🚀</div>
+                    <h3>Tech & Market Mastery</h3>
+                    <p>AI tools, Data Analytics, Digital Marketing, and Stock Market trading courses.</p>
+                    <a href="tech-hub.html" class="portal-btn">Launch Skills &rarr;</a>
+                </div>
+
+                <!-- Zone 7 -->
+                <div class="glow-card highlight-card" id="doubt-portal">
+                    <div class="card-icon">💬</div>
+                    <h3>Ask Doubts Directly</h3>
+                    <p>Direct problem-solving portal: select your Class, Subject & ask your question.</p>
+                    <form id="directDoubtForm" class="quick-doubt-form">
+                        <select id="userClass" required>
+                            <option value="">Select Class</option>
+                            <option value="Class 9">Class 9th</option>
+                            <option value="Class 10">Class 10th</option>
+                            <option value="Class 11">Class 11th</option>
+                            <option value="Class 12">Class 12th</option>
+                            <option value="Civil Services / Competitive">Competitive / GK</option>
+                        </select>
+                        <input type="text" id="userSubject" placeholder="Subject / Chapter" required>
+                        <textarea id="userQuestion" placeholder="अपना प्रश्न यहाँ लिखें..." rows="2" required></textarea>
+                        <button type="submit" class="whatsapp-send-btn">
+                            <i class="fa-brands fa-whatsapp"></i> Send to Teacher (WhatsApp)
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Adorable Floating Dock (Call, WhatsApp, Feedback) -->
+    <div class="floating-nature-dock">
+        <a href="tel:+91XXXXXXXXXX" class="dock-btn call-btn" title="Call Us">
+            <i class="fa-solid fa-phone"></i>
+            <span class="dock-tip">Call</span>
+        </a>
+        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="dock-btn wa-btn" title="WhatsApp Chat">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span class="dock-tip">WhatsApp</span>
+        </a>
+        <button id="feedbackBtn" class="dock-btn fb-btn" title="Give Feedback">
+            <i class="fa-solid fa-heart"></i>
+            <span class="dock-tip">Feedback</span>
+        </button>
+    </div>
+
+    <!-- Engagement Floating Bar (Share, Like, Comment) -->
+    <div class="floating-engagement">
+        <button id="likeBtn" class="engage-btn"><i class="fa-regular fa-thumbs-up"></i> <span id="likeCount">142</span></button>
+        <button id="shareBtn" class="engage-btn"><i class="fa-solid fa-share-nodes"></i> Share</button>
+    </div>
+
+    <!-- Nature Footer -->
+    <footer class="nature-footer">
+        <p class="tagline-glow">“ज्ञान वही जो भटकने से रोके और राह दिखाए”</p>
+        <p class="copyright">© 2026 Nitya Educational Clinic & Lab. All rights reserved. Built for Excellence.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
