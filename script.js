@@ -146,3 +146,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+// Drawer Menu Toggle
+const menuToggleBtn = document.getElementById('menuToggleBtn');
+const closeMenuBtn = document.getElementById('closeMenuBtn');
+const menuDrawer = document.getElementById('menuDrawer');
+
+if(menuToggleBtn && menuDrawer) {
+    menuToggleBtn.addEventListener('click', () => menuDrawer.classList.add('open'));
+    closeMenuBtn.addEventListener('click', () => menuDrawer.classList.remove('open'));
+}
