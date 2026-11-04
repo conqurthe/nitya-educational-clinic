@@ -3,35 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nitya Educational Clinic & Lab | नित्या एजुकेशनल क्लिनिक</title>
-    <!-- Royal Nature & Sacred Fonts -->
+    <title>Nitya Educational Clinic & Lab | अलौकिक प्रकृति गुरुकुल</title>
+    <!-- Sacred & Nature Inspired Royal Typography -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Philosopher:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600;700;800&family=Yatra+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         /* ==========================================================
-           POINT 2: PURE BIOLUMINESCENT ENCHANTED NATURE ENGINE
+           LIVING ORGANIC NATURE WORLD - ENCHANTED FOREST ENGINE
            ========================================================== */
         :root {
-            /* Night Mode: Avatar-Inspired Deep Bioluminescent Rainforest */
-            --forest-deep: radial-gradient(circle at 50% 20%, #062e22 0%, #021a13 50%, #010a07 100%);
-            --vine-frame: #10b981;
+            --forest-sky: radial-gradient(circle at 50% 20%, #04251a 0%, #02140e 55%, #010805 100%);
+            --leaf-green: #10b981;
             --vine-glow: 0 0 20px #10b981, inset 0 0 15px rgba(52, 211, 153, 0.4);
-            --card-glass: rgba(3, 24, 16, 0.85);
-            --text-glow-gold: 0 0 14px rgba(252, 211, 77, 0.9), 0 0 28px rgba(245, 158, 11, 0.5);
-            --text-glow-neon: 0 0 14px rgba(52, 211, 153, 0.9), 0 0 28px rgba(16, 185, 129, 0.6);
-            --tv-wood-rim: linear-gradient(145deg, #1e293b, #090e17);
+            --bark-wood: linear-gradient(135deg, #2b1810 0%, #170c08 50%, #3e2723 100%);
+            --bark-border: #8d5b4c;
+            --nature-card: rgba(3, 24, 15, 0.88);
+            --text-gold-aura: 0 0 14px rgba(252, 211, 77, 0.9), 0 0 28px rgba(245, 158, 11, 0.6);
+            --text-glow-emerald: 0 0 14px rgba(52, 211, 153, 0.9), 0 0 25px rgba(16, 185, 129, 0.6);
+            --soil-dark: #120905;
         }
 
         body.day-mode {
-            /* Day Mode: Sacred Sunlit Vedic Forest & Morning Mist */
-            --forest-deep: radial-gradient(circle at 50% 10%, #ecfdf5 0%, #a7f3d0 60%, #34d399 100%);
-            --vine-frame: #059669;
-            --vine-glow: 0 0 15px rgba(5, 150, 105, 0.35), inset 0 0 10px rgba(255, 255, 255, 0.6);
-            --card-glass: rgba(255, 255, 255, 0.92);
-            --text-glow-gold: 0 0 12px rgba(180, 83, 9, 0.4);
-            --text-glow-neon: 0 0 10px rgba(5, 150, 105, 0.35);
-            --tv-wood-rim: linear-gradient(145deg, #78350f, #451a03);
+            --forest-sky: radial-gradient(circle at 50% 15%, #ecfdf5 0%, #a7f3d0 50%, #34d399 100%);
+            --leaf-green: #059669;
+            --vine-glow: 0 0 16px rgba(5, 150, 105, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.5);
+            --bark-wood: linear-gradient(135deg, #6d4c41 0%, #4e342e 50%, #8d6e63 100%);
+            --bark-border: #bcaaa4;
+            --nature-card: rgba(255, 255, 255, 0.92);
+            --text-gold-aura: 0 0 12px rgba(180, 83, 9, 0.5);
+            --text-glow-emerald: 0 0 10px rgba(5, 150, 105, 0.4);
+            --soil-dark: #3e2723;
         }
 
         * {
@@ -39,22 +41,39 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
-            background: var(--forest-deep);
+            background: var(--forest-sky);
             min-height: 100vh;
             color: #ecfdf5;
             overflow-x: hidden;
             position: relative;
-            transition: background 0.9s ease;
+            transition: background 0.9s ease-in-out;
         }
 
         body.day-mode {
             color: #064e3b;
         }
 
-        /* Ambient Living Nature Canopy (Background Living Lights) */
+        /* Continuous Atmospheric Mist / Fog */
+        .ambient-fog {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(245, 158, 11, 0.06) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 2;
+            animation: fogSway 14s ease-in-out infinite alternate;
+        }
+
+        @keyframes fogSway {
+            0% { transform: scale(1) translate(0, 0); opacity: 0.6; }
+            100% { transform: scale(1.1) translate(-15px, 20px); opacity: 0.95; }
+        }
+
+        /* Nature Canvases (Fireflies & Leaves) */
         #natureCanvas {
             position: fixed;
             top: 0;
@@ -62,10 +81,40 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 1;
+            z-index: 3;
         }
 
-        /* --- Header Navigation --- */
+        /* Top Hanging Overgrown Vines (Lataayein) */
+        .hanging-vines-top {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 48px;
+            pointer-events: none;
+            z-index: 1005;
+            display: flex;
+            justify-content: space-around;
+            overflow: hidden;
+        }
+
+        .vine-strand {
+            font-size: 1.6rem;
+            color: #34d399;
+            filter: drop-shadow(0 4px 10px rgba(16, 185, 129, 0.8));
+            animation: vineSway 4s ease-in-out infinite alternate;
+            transform-origin: top center;
+        }
+
+        .vine-strand:nth-child(2n) { animation-duration: 5.5s; font-size: 1.3rem; color: #10b981; }
+        .vine-strand:nth-child(3n) { animation-duration: 3.8s; font-size: 1.8rem; color: #6ee7b7; }
+
+        @keyframes vineSway {
+            0% { transform: rotate(-6deg); }
+            100% { transform: rotate(6deg); }
+        }
+
+        /* --- Header: Real Carved Wooden Branch Bar --- */
         .nature-header {
             position: sticky;
             top: 0;
@@ -73,11 +122,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 14px;
+            padding: 8px 12px;
             background: rgba(2, 16, 11, 0.92);
-            backdrop-filter: blur(18px);
-            border-bottom: 2px solid var(--vine-frame);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.85), var(--vine-glow);
+            backdrop-filter: blur(16px);
+            border-bottom: 3px solid var(--bark-border);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.9), var(--vine-glow);
+            width: 100%;
         }
 
         body.day-mode .nature-header {
@@ -87,30 +137,25 @@
         .header-brand-wrap {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             flex: 1;
             min-width: 0;
         }
 
         .menu-leaf-btn {
-            width: 42px;
-            height: 42px;
-            min-width: 42px;
-            background: radial-gradient(circle, rgba(16, 185, 129, 0.4), rgba(3, 24, 16, 0.8));
-            border: 2px solid var(--vine-frame);
+            width: 38px;
+            height: 38px;
+            min-width: 38px;
+            background: var(--bark-wood);
+            border: 2px solid var(--leaf-green);
             border-radius: 12px;
-            color: #6ee7b7;
-            font-size: 1.25rem;
+            color: #a7f3d0;
+            font-size: 1.15rem;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             box-shadow: var(--vine-glow);
-        }
-
-        body.day-mode .menu-leaf-btn {
-            color: #064e3b;
-            background: rgba(16, 185, 129, 0.2);
         }
 
         .brand-titles {
@@ -120,17 +165,18 @@
             min-width: 0;
         }
 
+        /* STRICT SINGLE LINE GUARANTEE: No Dots, No Ellipsis */
         .brand-titles h1 {
             font-family: 'Philosopher', sans-serif;
-            font-size: clamp(0.85rem, 3.8vw, 1.3rem);
+            font-size: clamp(0.72rem, 3.1vw, 1.15rem);
             white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            overflow: visible;
             font-weight: 800;
+            letter-spacing: -0.2px;
             background: linear-gradient(135deg, #a7f3d0 0%, #34d399 35%, #fef08a 70%, #f59e0b 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: var(--text-glow-neon);
+            text-shadow: 0 0 10px rgba(52, 211, 153, 0.7);
         }
 
         body.day-mode .brand-titles h1 {
@@ -140,67 +186,85 @@
         }
 
         .brand-titles p {
-            font-size: 0.68rem;
+            font-size: 0.62rem;
             color: #6ee7b7;
             font-weight: 600;
             white-space: nowrap;
         }
 
-        body.day-mode .brand-titles p {
-            color: #047857;
-        }
+        body.day-mode .brand-titles p { color: #047857; }
 
-        /* Day/Night Magic Toggle */
-        .nature-mode-btn {
+        .header-controls {
             display: flex;
             align-items: center;
             gap: 6px;
-            padding: 7px 12px;
-            min-width: fit-content;
-            background: linear-gradient(135deg, rgba(6, 78, 59, 0.9), rgba(2, 44, 34, 0.95));
-            border: 2px solid var(--vine-frame);
-            border-radius: 30px;
+        }
+
+        /* Sound Ambient Toggle */
+        .sound-toggle-btn {
+            width: 34px;
+            height: 34px;
+            background: var(--bark-wood);
+            border: 1.5px solid var(--leaf-green);
+            border-radius: 50%;
+            color: #fcd34d;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+        }
+
+        /* Day / Night Switch */
+        .nature-mode-btn {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 6px 10px;
+            background: var(--bark-wood);
+            border: 2px solid var(--leaf-green);
+            border-radius: 25px;
             color: #fef08a;
             cursor: pointer;
             box-shadow: var(--vine-glow);
         }
 
         body.day-mode .nature-mode-btn {
-            background: linear-gradient(135deg, #fef08a, #f59e0b);
             border-color: #d97706;
-            color: #78350f;
-            box-shadow: 0 0 18px rgba(245, 158, 11, 0.7);
+            color: #fef08a;
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.6);
         }
 
-        /* --- Slide-out Navigation Drawer --- */
+        .mode-icon { font-size: 0.88rem; }
+        .mode-text { font-size: 0.65rem; font-weight: 700; }
+
+        /* --- Drawer: Dense Herbal Tree trunk --- */
         .forest-drawer {
             position: fixed;
             top: 0; left: -320px;
             width: 295px; height: 100%;
             background: rgba(2, 18, 12, 0.97);
             backdrop-filter: blur(25px);
-            border-right: 2px solid var(--vine-frame);
+            border-right: 3px solid var(--bark-border);
             box-shadow: 12px 0 50px rgba(0, 0, 0, 0.9);
             z-index: 1200;
-            padding: 24px 20px;
-            transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 24px 18px;
+            transition: left 0.4s ease;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 14px;
         }
 
-        body.day-mode .forest-drawer {
-            background: rgba(255, 255, 255, 0.98);
-        }
-
+        body.day-mode .forest-drawer { background: rgba(255, 255, 255, 0.98); }
         .forest-drawer.open { left: 0; }
 
         .drawer-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-bottom: 14px;
-            border-bottom: 1.5px solid var(--vine-frame);
+            padding-bottom: 12px;
+            border-bottom: 2px dashed var(--leaf-green);
         }
 
         .drawer-close {
@@ -218,100 +282,86 @@
             padding: 12px 14px;
             text-decoration: none;
             color: #ecfdf5;
-            font-size: 0.92rem;
+            font-size: 0.9rem;
             font-weight: 600;
             border-radius: 14px;
-            margin-bottom: 8px;
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid transparent;
-            transition: all 0.3s ease;
+            margin-bottom: 6px;
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            transition: all 0.25s ease;
         }
 
-        body.day-mode .drawer-nav a {
-            color: #064e3b;
-        }
-
+        body.day-mode .drawer-nav a { color: #064e3b; }
         .drawer-nav a:hover {
-            border-color: var(--vine-frame);
-            box-shadow: var(--vine-glow);
+            border-color: var(--leaf-green);
             transform: translateX(6px);
+            box-shadow: var(--vine-glow);
         }
 
-        /* --- Hero Section & Tagline --- */
+        /* --- Hero Nature Section --- */
         .nature-hero {
             position: relative;
             z-index: 10;
-            padding: 35px 16px 80px 16px;
+            padding: 30px 14px 75px 14px;
             text-align: center;
-            max-width: 950px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .divine-badge {
             display: inline-block;
-            padding: 8px 22px;
-            background: rgba(4, 30, 20, 0.8);
-            border: 1.5px solid var(--vine-frame);
-            border-radius: 30px;
-            font-size: 0.82rem;
+            padding: 8px 20px;
+            background: var(--bark-wood);
+            border: 2px solid var(--leaf-green);
+            border-radius: 25px;
+            font-size: 0.78rem;
             font-weight: 700;
             color: #a7f3d0;
             box-shadow: var(--vine-glow);
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
-        body.day-mode .divine-badge {
-            background: rgba(255, 255, 255, 0.92);
-            color: #047857;
-        }
+        body.day-mode .divine-badge { color: #fef08a; }
 
         .sacred-tagline {
-            font-family: 'Cinzel Decorative', 'Yatra One', serif;
-            font-size: clamp(1.45rem, 5.2vw, 2.3rem);
+            font-family: 'Cinzel Decorative', cursive, serif;
+            font-size: clamp(1.4rem, 5vw, 2.2rem);
             line-height: 1.45;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
             background: linear-gradient(135deg, #a7f3d0 0%, #34d399 30%, #fef08a 65%, #f59e0b 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: var(--text-glow-gold);
-            animation: sacredPulse 3.5s infinite alternate;
+            text-shadow: var(--text-gold-aura);
+            animation: pulseAura 4s infinite alternate;
         }
 
-        @keyframes sacredPulse {
-            0% { filter: drop-shadow(0 0 10px rgba(52, 211, 153, 0.7)); }
-            100% { filter: drop-shadow(0 0 25px rgba(250, 204, 21, 0.9)); }
-        }
-
-        body.day-mode .sacred-tagline {
-            background: linear-gradient(135deg, #064e3b 0%, #059669 35%, #d97706 75%, #78350f 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        @keyframes pulseAura {
+            0% { filter: drop-shadow(0 0 10px rgba(52, 211, 153, 0.8)); }
+            100% { filter: drop-shadow(0 0 25px rgba(250, 204, 21, 0.95)); }
         }
 
         .hero-statement {
-            font-size: 0.92rem;
+            font-size: 0.9rem;
             color: #a7f3d0;
-            line-height: 1.65;
-            margin-bottom: 36px;
+            line-height: 1.6;
+            margin-bottom: 34px;
             font-weight: 500;
         }
 
-        body.day-mode .hero-statement {
-            color: #065f46;
-        }
+        body.day-mode .hero-statement { color: #065f46; }
 
-        /* --- Living Retro Wood TV --- */
+        /* --- Real Carved Wood Retro Nature TV --- */
         .nature-tv-wrap {
-            margin: 15px auto 48px auto;
-            max-width: 560px;
+            margin: 15px auto 44px auto;
+            max-width: 550px;
         }
 
         .wood-tv-casing {
-            background: var(--tv-wood-rim);
-            border-radius: 30px;
+            background: var(--bark-wood);
+            border-radius: 28px;
             padding: 16px;
-            border: 3px solid var(--vine-frame);
-            box-shadow: 0 22px 60px rgba(0, 0, 0, 0.9), var(--vine-glow);
+            border: 3px solid var(--bark-border);
+            box-shadow: 0 22px 60px rgba(0, 0, 0, 0.95), var(--vine-glow);
             position: relative;
         }
 
@@ -336,9 +386,9 @@
         .crt-tv-screen {
             background: radial-gradient(circle, #022c22 0%, #00120b 100%);
             border-radius: 18px;
-            padding: 20px 16px;
+            padding: 18px 14px;
             border: 2px solid rgba(52, 211, 153, 0.5);
-            box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.95);
+            box-shadow: inset 0 0 35px rgba(0, 0, 0, 0.95);
         }
 
         body.day-mode .crt-tv-screen {
@@ -346,7 +396,7 @@
         }
 
         .tv-badge-live {
-            font-size: 0.78rem;
+            font-size: 0.76rem;
             font-weight: 700;
             color: #fcd34d;
             display: flex;
@@ -356,133 +406,127 @@
         }
 
         .blinking-ruby {
-            width: 10px; height: 10px;
+            width: 9px; height: 9px;
             background: #ef4444;
             border-radius: 50%;
-            box-shadow: 0 0 12px #ef4444;
-            animation: pulseRuby 1s infinite alternate;
+            box-shadow: 0 0 10px #ef4444;
+            animation: blink 1s infinite alternate;
         }
 
-        @keyframes pulseRuby { 0% { opacity: 0.3; } 100% { opacity: 1; } }
+        @keyframes blink { 0% { opacity: 0.3; } 100% { opacity: 1; } }
 
         .tv-headline {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: #fef08a;
             margin-bottom: 10px;
-            line-height: 1.45;
-            text-shadow: var(--text-glow-gold);
+            line-height: 1.4;
+            text-shadow: var(--text-gold-aura);
         }
 
         .tv-brief {
-            font-size: 0.84rem;
+            font-size: 0.82rem;
             color: #d1fae5;
-            line-height: 1.6;
-            margin-bottom: 18px;
+            line-height: 1.55;
+            margin-bottom: 16px;
         }
 
         .tv-btn-tray {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
             justify-content: center;
         }
 
         .nature-btn-pill {
             text-decoration: none;
-            font-size: 0.78rem;
+            font-size: 0.76rem;
             font-weight: 700;
-            padding: 10px 16px;
+            padding: 9px 15px;
             background: linear-gradient(135deg, #059669, #10b981);
             color: #ffffff;
-            border-radius: 25px;
-            box-shadow: 0 5px 22px rgba(16, 185, 129, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.35);
+            border-radius: 22px;
+            box-shadow: 0 5px 20px rgba(16, 185, 129, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        /* --- 7 Wonder Portals (Living Cards) --- */
+        /* --- 7 Wonder Portals (Organic Bark & Vines Frames) --- */
         .portal-section-title {
             font-family: 'Philosopher', sans-serif;
-            font-size: 1.6rem;
-            margin: 45px 0 28px 0;
+            font-size: 1.5rem;
+            margin: 40px 0 25px 0;
             background: linear-gradient(135deg, #a7f3d0 0%, #34d399 40%, #fef08a 75%, #f59e0b 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: var(--text-glow-neon);
-        }
-
-        body.day-mode .portal-section-title {
-            background: linear-gradient(135deg, #064e3b 0%, #059669 45%, #b45309 80%, #78350f 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            text-shadow: var(--text-glow-emerald);
         }
 
         .portals-matrix {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
+            gap: 22px;
         }
 
         .living-card {
-            background: var(--card-glass);
-            border: 2px solid var(--vine-frame);
-            border-radius: 26px;
-            padding: 26px 20px;
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8), var(--vine-glow);
-            backdrop-filter: blur(16px);
+            background: var(--nature-card);
+            border: 2.5px solid var(--bark-border);
+            border-radius: 24px;
+            padding: 24px 18px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85), var(--vine-glow);
+            backdrop-filter: blur(14px);
             text-align: left;
-            transition: transform 0.35s ease, box-shadow 0.35s ease;
             position: relative;
+            transition: transform 0.3s ease;
         }
 
-        .living-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 18px 45px rgba(16, 185, 129, 0.6);
+        .living-card::after {
+            content: '🍃';
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            font-size: 1.2rem;
+            opacity: 0.6;
         }
+
+        .living-card:hover { transform: translateY(-6px); }
 
         .living-icon {
-            font-size: 2.6rem;
-            margin-bottom: 14px;
-            filter: drop-shadow(0 0 14px rgba(52, 211, 153, 0.8));
+            font-size: 2.4rem;
+            margin-bottom: 12px;
+            filter: drop-shadow(0 0 12px rgba(52, 211, 153, 0.7));
         }
 
         .living-card h3 {
-            font-size: 1.15rem;
-            margin-bottom: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
             color: #fef08a;
-            text-shadow: 0 0 10px rgba(254, 240, 138, 0.4);
+            text-shadow: 0 0 8px rgba(254, 240, 138, 0.4);
         }
 
-        body.day-mode .living-card h3 {
-            color: #064e3b;
-        }
+        body.day-mode .living-card h3 { color: #064e3b; }
 
         .living-card p {
-            font-size: 0.85rem;
+            font-size: 0.83rem;
             color: #a7f3d0;
-            line-height: 1.6;
-            margin-bottom: 20px;
+            line-height: 1.55;
+            margin-bottom: 18px;
         }
 
-        body.day-mode .living-card p {
-            color: #047857;
-        }
+        body.day-mode .living-card p { color: #047857; }
 
         .entry-link {
             text-decoration: none;
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             font-weight: 700;
             color: #34d399;
-            text-shadow: 0 0 12px rgba(52, 211, 153, 0.7);
+            text-shadow: 0 0 10px rgba(52, 211, 153, 0.6);
         }
 
-        body.day-mode .entry-link {
-            color: #059669;
-        }
+        body.day-mode .entry-link { color: #059669; }
 
-        /* Doubt Portal Special Styling */
+        /* Doubt Card Special */
         .doubt-special-portal {
-            border: 2px solid rgba(245, 158, 11, 0.9);
-            box-shadow: 0 0 25px rgba(245, 158, 11, 0.7);
+            border: 2.5px solid rgba(245, 158, 11, 0.85);
+            box-shadow: var(--text-gold-aura);
         }
 
         .nature-doubt-form {
@@ -496,11 +540,11 @@
         .nature-doubt-form textarea {
             width: 100%;
             padding: 10px 14px;
-            background: rgba(1, 15, 10, 0.8);
-            border: 1.5px solid var(--vine-frame);
+            background: rgba(1, 15, 10, 0.85);
+            border: 1.5px solid var(--leaf-green);
             border-radius: 12px;
             color: #ffffff;
-            font-size: 0.84rem;
+            font-size: 0.82rem;
             outline: none;
         }
 
@@ -514,47 +558,46 @@
         .send-whatsapp-btn {
             background: linear-gradient(135deg, #25D366, #128C7E);
             border: none;
-            padding: 12px;
-            border-radius: 14px;
+            padding: 11px;
+            border-radius: 12px;
             color: #ffffff;
             font-weight: 700;
-            font-size: 0.88rem;
+            font-size: 0.86rem;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
         }
 
-        /* Floating Nature Action Dock */
+        /* Floating Nature Action Controls */
         .floating-action-dock {
             position: fixed;
             right: 14px;
             bottom: 24px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
             z-index: 1100;
         }
 
         .circle-action-btn {
-            width: 48px;
-            height: 48px;
+            width: 46px;
+            height: 46px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             text-decoration: none;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
-            border: 2px solid rgba(255, 255, 255, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.4);
         }
 
         .call-leaf { background: linear-gradient(135deg, #0284c7, #38bdf8); }
         .wa-leaf { background: linear-gradient(135deg, #16a34a, #4ade80); }
-        .heart-leaf { background: linear-gradient(135deg, #db2777, #f472b6); border: 2px solid rgba(255, 255, 255, 0.5); }
+        .heart-leaf { background: linear-gradient(135deg, #db2777, #f472b6); border: 2px solid rgba(255, 255, 255, 0.4); }
 
         .floating-social-tray {
             position: fixed;
@@ -566,49 +609,60 @@
         }
 
         .social-leaf-btn {
-            background: rgba(2, 16, 11, 0.92);
-            border: 1.5px solid var(--vine-frame);
+            background: var(--bark-wood);
+            border: 1.5px solid var(--leaf-green);
             color: #ecfdf5;
-            padding: 8px 14px;
-            border-radius: 25px;
-            font-size: 0.78rem;
+            padding: 8px 12px;
+            border-radius: 22px;
+            font-size: 0.76rem;
             font-weight: 700;
             cursor: pointer;
             box-shadow: var(--vine-glow);
         }
 
-        body.day-mode .social-leaf-btn {
-            background: rgba(255, 255, 255, 0.94);
-            color: #064e3b;
-        }
-
+        /* Footer */
         .deep-forest-footer {
             text-align: center;
-            padding: 38px 16px;
-            background: rgba(1, 8, 5, 0.98);
-            border-top: 2px solid var(--vine-frame);
+            padding: 35px 14px;
+            background: #010a07;
+            border-top: 3px solid var(--bark-border);
             position: relative;
             z-index: 10;
         }
 
         .footer-tagline-glow {
             font-family: 'Philosopher', sans-serif;
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             color: #fcd34d;
             font-weight: 700;
-            margin-bottom: 8px;
-            text-shadow: var(--text-glow-gold);
+            margin-bottom: 6px;
+            text-shadow: var(--text-gold-aura);
         }
 
         .footer-rights {
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             color: #6ee7b7;
         }
     </style>
 </head>
 <body class="night-mode">
 
-    <!-- Living Nature Atmosphere Canvas (Fireflies + Spores) -->
+    <!-- Ambient Moving Mist / Fog -->
+    <div class="ambient-fog"></div>
+
+    <!-- Hanging Creeper Vines at Top (Jhoolti hui belen) -->
+    <div class="hanging-vines-top">
+        <span class="vine-strand">🌿</span>
+        <span class="vine-strand">🍃</span>
+        <span class="vine-strand">🌱</span>
+        <span class="vine-strand">🌿</span>
+        <span class="vine-strand">🍃</span>
+        <span class="vine-strand">🌿</span>
+        <span class="vine-strand">🌱</span>
+        <span class="vine-strand">🍃</span>
+    </div>
+
+    <!-- Bioluminescent Fireflies, Spores & Water Droplets Canvas -->
     <canvas id="natureCanvas"></canvas>
 
     <!-- Slide-out Menu Drawer -->
@@ -629,7 +683,7 @@
         </div>
     </div>
 
-    <!-- Header Navigation -->
+    <!-- Real Branch/Bark Header Navigation -->
     <header class="nature-header">
         <div class="header-brand-wrap">
             <button id="drawerToggleBtn" class="menu-leaf-btn" title="Open Menu">
@@ -641,14 +695,21 @@
             </div>
         </div>
 
-        <!-- Day / Night Magic Toggle -->
-        <button id="natureModeToggle" class="nature-mode-btn" title="Switch Day / Night">
-            <span class="mode-icon">🌙</span>
-            <span class="mode-text">Night Forest</span>
-        </button>
+        <div class="header-controls">
+            <!-- Living Nature Sound Engine Toggle -->
+            <button id="natureSoundBtn" class="sound-toggle-btn" title="Toggle Jungle Sound">
+                <i class="fa-solid fa-volume-xmark" id="soundIcon"></i>
+            </button>
+
+            <!-- Day / Night Magic Toggle -->
+            <button id="natureModeToggle" class="nature-mode-btn" title="Switch Day / Night">
+                <span class="mode-icon">🌙</span>
+                <span class="mode-text">Night</span>
+            </button>
+        </div>
     </header>
 
-    <!-- Hero Content -->
+    <!-- Main Nature Content -->
     <main id="home" class="nature-hero">
         <div class="divine-badge">✨ Nature Inspired Educational Platform | प्रकृति समर्पित शिक्षा</div>
         <h2 class="sacred-tagline">ज्ञान वही जो भटकने से रोके और राह दिखाए</h2>
@@ -656,7 +717,7 @@
             Class 6th to 12th (NCERT / CBSE / UP Board 2026), Science & Maths Labs, English Pro Mastery & Civil Services GK.
         </p>
 
-        <!-- Living Retro Wood TV -->
+        <!-- Real Carved Wood Retro Nature TV -->
         <section id="smart-tv" class="nature-tv-wrap">
             <div class="wood-tv-casing">
                 <div class="tv-antenna">
@@ -765,16 +826,16 @@
         <button id="natureShareBtn" class="social-leaf-btn"><i class="fa-solid fa-share-nodes"></i> Share</button>
     </div>
 
-    <!-- Nature Footer -->
+    <!-- Deep Soil/Bark Footer -->
     <footer class="deep-forest-footer">
         <p class="footer-tagline-glow">“ज्ञान वही जो भटकने से रोके और राह दिखाए”</p>
         <p class="footer-rights">© 2026 Nitya Educational Clinic & Lab. All rights reserved. Built for Excellence.</p>
     </footer>
 
-    <!-- NATURE PARTICLES & INTERACTION ENGINE -->
+    <!-- REAL BIOLUMINESCENT PARTICLES & JUNGLE AUDIO SYNTHESIZER SCRIPT -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // 1. BIOLUMINESCENT FIREFLIES & SPORES ENGINE
+            // 1. DYNAMIC NATURE CANVASES: FIREFLIES, FLOATING LEAVES & RAIN SPORES
             const canvas = document.getElementById('natureCanvas');
             const ctx = canvas.getContext('2d');
             let width = canvas.width = window.innerWidth;
@@ -786,26 +847,26 @@
             });
 
             const particles = [];
-            const symbols = ['🍃', '🍂', '🌿'];
+            const leafSymbols = ['🍃', '🍂', '🌿'];
 
-            // 15 Floating Leaves
-            for (let i = 0; i < 15; i++) {
+            // 15 Falling & Swaying Leaves
+            for (let i = 0; i < 16; i++) {
                 particles.push({
                     type: 'leaf',
                     x: Math.random() * width,
                     y: Math.random() * height - height,
                     size: Math.random() * 12 + 16,
-                    speedX: Math.random() * 1.5 - 0.75,
-                    speedY: Math.random() * 1.2 + 0.8,
+                    speedX: Math.random() * 1.4 - 0.7,
+                    speedY: Math.random() * 1.1 + 0.8,
                     rotation: Math.random() * 360,
                     rotSpeed: Math.random() * 2 - 1,
-                    symbol: symbols[Math.floor(Math.random() * symbols.length)],
+                    symbol: leafSymbols[Math.floor(Math.random() * leafSymbols.length)],
                     opacity: Math.random() * 0.5 + 0.5
                 });
             }
 
-            // 25 Glowing Fireflies / Bio-Spores
-            for (let i = 0; i < 25; i++) {
+            // 35 Bioluminescent Glowing Fireflies
+            for (let i = 0; i < 35; i++) {
                 particles.push({
                     type: 'firefly',
                     x: Math.random() * width,
@@ -814,12 +875,12 @@
                     speedX: Math.random() * 0.8 - 0.4,
                     speedY: Math.random() * 0.8 - 0.4,
                     alpha: Math.random(),
-                    alphaChange: (Math.random() * 0.02 + 0.01) * (Math.random() > 0.5 ? 1 : -1),
-                    color: Math.random() > 0.4 ? 'rgba(52, 211, 153,' : 'rgba(250, 204, 21,'
+                    alphaChange: (Math.random() * 0.025 + 0.01) * (Math.random() > 0.5 ? 1 : -1),
+                    color: Math.random() > 0.45 ? 'rgba(52, 211, 153,' : 'rgba(250, 204, 21,'
                 });
             }
 
-            function renderNature() {
+            function renderLivingNature() {
                 ctx.clearRect(0, 0, width, height);
 
                 particles.forEach(p => {
@@ -827,12 +888,10 @@
                         p.y += p.speedY;
                         p.x += Math.sin(p.y / 35) + p.speedX;
                         p.rotation += p.rotSpeed;
-
                         if (p.y > height + 20) {
                             p.y = -20;
                             p.x = Math.random() * width;
                         }
-
                         ctx.save();
                         ctx.translate(p.x, p.y);
                         ctx.rotate((p.rotation * Math.PI) / 180);
@@ -844,7 +903,6 @@
                         p.x += p.speedX;
                         p.y += p.speedY;
                         p.alpha += p.alphaChange;
-
                         if (p.alpha <= 0.1 || p.alpha >= 0.95) p.alphaChange *= -1;
                         if (p.x < 0) p.x = width;
                         if (p.x > width) p.x = 0;
@@ -854,18 +912,61 @@
                         ctx.beginPath();
                         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
                         ctx.fillStyle = `${p.color} ${p.alpha})`;
-                        ctx.shadowBlur = 12;
+                        ctx.shadowBlur = 14;
                         ctx.shadowColor = p.color === 'rgba(52, 211, 153,' ? '#10b981' : '#f59e0b';
                         ctx.fill();
                         ctx.shadowBlur = 0;
                     }
                 });
-
-                requestAnimationFrame(renderNature);
+                requestAnimationFrame(renderLivingNature);
             }
-            renderNature();
+            renderLivingNature();
 
-            // 2. DAY & NIGHT MAGIC SWITCH
+            // 2. REAL AUDIO SYNTHESIZER: NIGHT CRICKETS & FOREST CHIRP (No external files needed)
+            let audioCtx = null;
+            let isSoundPlaying = false;
+            let cricketInterval = null;
+
+            function playCricketChirp() {
+                if (!audioCtx || !isSoundPlaying) return;
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(4500 + Math.random() * 500, audioCtx.currentTime);
+                gain.gain.setValueAtTime(0.015, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.08);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.08);
+            }
+
+            const soundBtn = document.getElementById('natureSoundBtn');
+            const soundIcon = document.getElementById('soundIcon');
+
+            soundBtn.addEventListener('click', () => {
+                if (!audioCtx) {
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+
+                isSoundPlaying = !isSoundPlaying;
+                if (isSoundPlaying) {
+                    soundIcon.className = 'fa-solid fa-volume-high';
+                    cricketInterval = setInterval(() => {
+                        playCricketChirp();
+                        setTimeout(playCricketChirp, 100);
+                        setTimeout(playCricketChirp, 200);
+                    }, 1400);
+                } else {
+                    soundIcon.className = 'fa-solid fa-volume-xmark';
+                    clearInterval(cricketInterval);
+                }
+            });
+
+            // 3. DAY / NIGHT LIVING CYCLE SWITCH
             const modeToggle = document.getElementById('natureModeToggle');
             const modeIcon = modeToggle.querySelector('.mode-icon');
             const modeText = modeToggle.querySelector('.mode-text');
@@ -874,14 +975,14 @@
                 document.body.classList.toggle('day-mode');
                 if (document.body.classList.contains('day-mode')) {
                     modeIcon.textContent = '☀️';
-                    modeText.textContent = 'Golden Day';
+                    modeText.textContent = 'Day';
                 } else {
                     modeIcon.textContent = '🌙';
-                    modeText.textContent = 'Night Forest';
+                    modeText.textContent = 'Night';
                 }
             });
 
-            // 3. SLIDE-OUT MENU DRAWER
+            // 4. SLIDE-OUT MENU DRAWER
             const drawerBtn = document.getElementById('drawerToggleBtn');
             const closeBtn = document.getElementById('closeDrawerBtn');
             const drawer = document.getElementById('forestDrawer');
@@ -891,7 +992,7 @@
                 closeBtn.addEventListener('click', () => drawer.classList.remove('open'));
             }
 
-            // 4. DIRECT WHATSAPP DOUBT SUBMISSION
+            // 5. DIRECT WHATSAPP DOUBT ACTION
             const doubtForm = document.getElementById('natureDoubtForm');
             doubtForm.addEventListener('submit', (e) => {
                 e.preventDefault();
@@ -901,28 +1002,22 @@
                 const teacherNumber = "919412108170";
                 const message = `🌿 *Nitya Educational Clinic - New Doubt Query* 🌿\n\n` +
                                 `📚 *Class:* ${dClass}\n` +
-                                `📖 *Subject / Topic:* ${dSubject}\n` +
+                                `📖 *Subject:* ${dSubject}\n` +
                                 `❓ *Question:* ${dQuestion}\n\n` +
                                 `_Sent via Nitya Educational Platform_`;
                 window.open(`https://wa.me/${teacherNumber}?text=${encodeURIComponent(message)}`, '_blank');
                 doubtForm.reset();
             });
 
-            // 5. ENGAGEMENT BUTTONS
+            // 6. ENGAGEMENT BUTTONS
             const likeBtn = document.getElementById('natureLikeBtn');
             const likeCounter = document.getElementById('likeCounter');
             let liked = false;
             likeBtn.addEventListener('click', () => {
                 let count = parseInt(likeCounter.textContent);
-                if (!liked) {
-                    likeCounter.textContent = count + 1;
-                    likeBtn.style.color = '#10b981';
-                    liked = true;
-                } else {
-                    likeCounter.textContent = count - 1;
-                    likeBtn.style.color = '';
-                    liked = false;
-                }
+                likeCounter.textContent = liked ? count - 1 : count + 1;
+                likeBtn.style.color = liked ? '' : '#10b981';
+                liked = !liked;
             });
 
             const shareBtn = document.getElementById('natureShareBtn');
@@ -930,9 +1025,9 @@
                 if (navigator.share) {
                     navigator.share({
                         title: 'Nitya Educational Clinic & Lab',
-                        text: 'ज्ञान वही जो भटकने से रोके और राह दिखाए - NCERT 2026 Academic Hub & Labs',
+                        text: 'ज्ञान वही जो भटकने से रोके और राह दिखाए',
                         url: window.location.href
-                    }).catch(console.error);
+                    });
                 } else {
                     navigator.clipboard.writeText(window.location.href);
                     alert('लिंक कॉपी हो गया है!');
@@ -948,3 +1043,4 @@
     </script>
 </body>
 </html>
+
